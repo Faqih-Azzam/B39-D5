@@ -8,7 +8,14 @@ function data(){
     let myEmail = "faqih.farhan.778@gmail.com"
 
     let a = document.createElement('a')
-    a.href=`mailto:${myEmail}?subject=${subject}&body=Hallo nama saya ${name}, ${message}, silahkan kontak saya dengan email ${email}, telp ${phone}`
+    a.href=
+        `
+        mailto:${myEmail}?subject=${subject}
+        &body=Hallo saya : ${name} 
+        %0A${message} 
+        %0AEmail saya : ${email} 
+        %0ATelp saya : ${phone}
+        `
     a.click()
 
     let form = {

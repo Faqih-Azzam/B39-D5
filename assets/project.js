@@ -14,20 +14,22 @@ function addPost(event) {
     let node = document.getElementById("node").checked  
     
     image = URL.createObjectURL(image[0])
-
+    
     function date() {
         let time = Math.abs(new Date(start) - new Date(end));
 
-        let years = Math.floor(time / (1000 * 3600 * 24 * 30 * 12));
-        let month = Math.floor(time / (1000 * 3600 * 24 * 30));
-        let days = Math.floor(time / (1000 * 3600 * 24));
+        let years = Math.floor(time / (1000 * 60 * 60 * 24 * 30 * 12));
+        let month = Math.floor(time / (1000 * 60 * 60 * 24 * 30));
+        let days = Math.floor(time / (1000 * 60 * 60 * 24));
 
         if (years > 0){
             return `${years} Years`
         } else if (month > 0){
             return `${month} Month`
-        } else {
+        } else if (days > 0){
             return `${days} Days`
+        } else {
+            return `-`
         }
     }
 
